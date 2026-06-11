@@ -183,7 +183,10 @@
       color:var(--muted);font-size:17px;max-width:50ch;
       margin:0 auto 28px;line-height:1.6;position:relative;z-index:1;
     }
-    .contact-block .btn{position:relative;z-index:1;padding:16px 30px;font-size:16px}
+    .contact-buttons{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;z-index:1}
+    .btn-contact{min-width:260px;justify-content:center;padding:16px 30px;font-size:16px;border-radius:14px}
+    .btn-phone{background:var(--surface-2);border:1px solid var(--line);color:var(--text)}
+    .btn-phone:hover{border-color:rgba(93,130,255,.4);background:rgba(255,255,255,.05);transform:translateY(-1px)}
 
     /* ── FOOTER ── */
     .footer{
@@ -239,7 +242,7 @@
         <a href="#proc">Výhody</a>
         <a href="#prekoho">Pre koho</a>
       </nav>
-      <a class="nav-cta" href="mailto:drugyautomations@gmail.com">Kontaktujte nás</a>
+      <a class="nav-cta" href="#kontakt">Kontaktujte nás</a>
     </div>
   </header>
 
@@ -252,7 +255,7 @@
           <div class="eyebrow"><span class="dot"></span> AI asistent na váš web</div>
           <h1>Odpovie zákazníkom <span>hneď</span>, aj keď vy nemáte čas</h1>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:drugyautomations@gmail.com">Kontaktujte nás</a>
+            <a class="btn btn-primary" href="#kontakt">Kontaktujte nás</a>
           </div>
           <div class="mini">
             <span>24/7 odpovede</span>
@@ -364,8 +367,11 @@
         <div class="contact-block">
           <span class="kicker">Začnite ešte dnes</span>
           <h2>Nechajte váš web predávať aj keď spíte</h2>
-          <p>Napíšte nám a do 24 hodín vám pošleme konkrétny návrh AI chatu pre váš web. Bez záväzkov.</p>
-          <a class="btn btn-primary" href="mailto:drugyautomations@gmail.com">Kontaktujte nás</a>
+          <p>Rádi Vám vysvetlíme čokoľvek cez: email / whatsapp / tel. č.</p>
+          <div class="contact-buttons">
+            <a class="btn btn-primary btn-contact" href="mailto:drugyautomations@gmail.com">✉ Napísať e-mail</a>
+            <a class="btn btn-phone btn-contact" href="tel:+421902694316">📞 +421 902 694 316</a>
+          </div>
         </div>
       </div>
     </section>
@@ -374,8 +380,8 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span>© 2025 Drugy Automations</span>
-      <span>AI riešenia pre váš biznis</span>
+      <span>✉ drugyautomations@gmail.com</span>
+      <span>📍 Prešov, Slovensko</span>
     </div>
   </footer>
 </body>

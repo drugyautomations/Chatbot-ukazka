@@ -224,6 +224,97 @@
       .contact-block{padding:36px 22px}
       .contact-block h2{font-size:48px}
     }
+  
+
+    /* ── DOPLNKOVÉ ŠTÝLY PRE KATALÓG ── */
+    .btn-secondary{
+      background:var(--surface-2);border:1px solid var(--line);color:var(--text);
+    }
+    .btn-secondary:hover{border-color:rgba(93,130,255,.4);background:rgba(255,255,255,.05);transform:translateY(-1px)}
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+    /* ── CENA – discount card ── */
+    .price-card{max-width:780px;margin:0 auto;text-align:left}
+
+    .price-top-row{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      gap:24px;margin-bottom:20px;flex-wrap:wrap;
+    }
+    .price-left{}
+
+    .price-label{
+      font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--muted);margin-bottom:10px;
+    }
+    .price-amounts{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+    .price-original{
+      font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,34px);
+      color:var(--muted);text-decoration:line-through;line-height:1;
+    }
+    .price-amount{
+      font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,10vw,84px);
+      color:var(--text);line-height:1;
+    }
+    .price-amount span{font-size:.45em;color:var(--muted)}
+
+    .price-right{
+      display:flex;flex-direction:column;align-items:flex-end;
+      gap:10px;flex-shrink:0;
+    }
+    .price-discount-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 20px;border-radius:999px;
+      background:linear-gradient(135deg,#ff8800,#e63200);
+      color:#fff;font-weight:700;font-size:13px;
+      white-space:nowrap;box-shadow:0 6px 20px rgba(255,100,0,.28);
+    }
+    .price-no-monthly{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 18px;border-radius:999px;
+      border:1px solid rgba(93,130,255,.42);
+      color:var(--primary-2);font-size:13px;font-weight:500;
+      background:rgba(44,91,255,.08);white-space:nowrap;
+    }
+
+    .discount-note{
+      font-size:14px;line-height:1.6;
+      border-block:1px solid var(--line);
+      padding:14px 0;margin-bottom:0;
+    }
+    .discount-note strong{color:var(--text)}
+
+    .price-badge{
+      display:inline-block;padding:6px 16px;border-radius:999px;
+      background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.28);
+      color:var(--success);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    }
+    .price-list{
+      list-style:none;display:grid;grid-template-columns:repeat(2,1fr);
+      gap:10px 32px;margin:22px 0 0;text-align:left;
+    }
+    .price-list li{display:flex;align-items:center;gap:10px;font-size:14px}
+    .price-list li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+    .price-note{color:var(--muted);font-size:13px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px;margin-top:20px;text-align:left}
+    .price-note a{color:var(--primary-2)}
+
+    @media(max-width:640px){
+      .price-top-row{flex-direction:column;align-items:flex-start}
+      .price-right{align-items:flex-start}
+      .price-list{grid-template-columns:1fr}
+    }
+    .price-note a{color:var(--primary-2)}
+
+    .tip-card{
+      background:rgba(44,91,255,.06);border:1px solid rgba(93,130,255,.18);
+      border-radius:var(--radius);padding:18px 22px;font-size:14px;color:var(--muted);
+      margin-top:16px;line-height:1.6;
+    }
+    .tip-card strong{color:var(--text)}
+
+    @media (max-width: 640px){
+      .grid-2{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -239,8 +330,12 @@
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#proc">Výhody</a>
+        <a href="#vyhody">Výhody</a>
+        <a href="#postup">Postup</a>
+        <a href="#pamat">Pamäť</a>
         <a href="#prekoho">Pre koho</a>
+        <a href="#cena">Cena</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a class="nav-cta" href="#kontakt">Kontaktujte nás</a>
     </div>
@@ -253,14 +348,14 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow"><span class="dot"></span> AI asistent na váš web</div>
-          <h1>Odpovie zákazníkom <span>hneď</span>, aj keď vy nemáte čas</h1>
+          <h1>Váš web odpovedá <span>24/7</span></h1>
           <div class="cta-row">
             <a class="btn btn-primary" href="#kontakt">Kontaktujte nás</a>
           </div>
           <div class="mini">
-            <span>24/7 odpovede</span>
-            <span>Jednoduché nasadenie</span>
-            <span>Obsah podľa vašich podkladov</span>
+            <span>Zákazníci dostanú odpoveď okamžite</span>
+            <span>Aj keď vy práve nemôžete</span>
+            <span>Jednoduchšie, ako to vyzerá</span>
           </div>
         </div>
 
@@ -277,7 +372,7 @@
               <span class="hero-metric-value">1 kód</span>
               <div class="hero-metric-text">
                 <strong>Jednoduché nasadenie</strong>
-                <span>Jeden riadok kódu, funguje na akomkoľvek webe</span>
+                <span>Krátky riadok kódu, funguje na akomkoľvek webe</span>
               </div>
             </div>
             <div class="hero-metric-item">
@@ -292,8 +387,8 @@
       </div>
     </section>
 
-    <!-- PREČO TO FUNGUJE -->
-    <section class="band" id="proc">
+    <!-- VÝHODY -->
+    <section id="vyhody">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head-row">
@@ -322,51 +417,258 @@
           <div class="card">
             <div class="step-no">04</div>
             <h3>Vždy aktuálny obsah</h3>
-            <p>Zmeníte ceny alebo ponuku? Chat aktualizujeme podľa nových podkladov kedykoľvek to potrebujete.</p>
+            <p>Zmeníte ceny alebo ponuku? Chat aktualizujeme podľa nových podkladov, kedykoľvek to potrebujete.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRE KOHO -->
-    <section id="prekoho">
+    <!-- POSTUP SPOLUPRÁCE -->
+    <section class="band" id="postup">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-row">
+            <div>
+              <span class="kicker">Ako spolupracujeme</span>
+              <h2>Postup spolupráce</h2>
+            </div>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="card">
+            <div class="step-no">01</div>
+            <h3>Databáza pamäti</h3>
+            <p>Vytvoríme dokument so všetkými informáciami z Vašej stránky a zdieľaný Google Drive priečinok. Ak chcete aktualizovať údaje, stačí pridať nový dokument do priečinka.</p>
+          </div>
+          <div class="card">
+            <div class="step-no">02</div>
+            <h3>Nastavenie asistenta</h3>
+            <p>Spracujeme Vaše podklady, rozdelíme ich na časti a uložíme do AI databázy. Nastavíme jazyk, tón a pravidlá. Otestujeme asistenta s bežnými otázkami Vašich klientov.</p>
+          </div>
+          <div class="card">
+            <div class="step-no">03</div>
+            <h3>Vloženie chat widgetu</h3>
+            <p>Pošleme Vám jeden krátky HTML kód. Vloží sa pred uzatvárací tag &lt;/body&gt;. Chat tlačidlo sa automaticky objaví v pravom dolnom rohu, farby a štýl prispôsobíme Vášmu dizajnu.</p>
+          </div>
+          <div class="card">
+            <div class="step-no">✓</div>
+            <h3>Hotovo, asistent pracuje za Vás</h3>
+            <p>Chat funguje nepretržite. Ak niečo nesedí, napíšte nám a okamžite opravíme.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <strong>💡 Tip:</strong> Čím detailnejší dokument, tým inteligentnejší asistent. Napríklad: „Konzultácia trvá 60 minút a stojí 60 €. Prebieha online alebo osobne v Bratislave."
+        </div>
+      </div>
+    </section>
+
+    <!-- AKO FUNGUJE PAMÄŤ -->
+    <section id="pamat">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-row">
+            <div>
+              <span class="kicker">Pod kapotou</span>
+              <h2>Ako funguje pamäť</h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>📁 Vaše dokumenty</h3>
+            <p>Nahráte PDF alebo Word súbory s cenami, službami, FAQ a kontaktmi. Vy ich kontrolujete a kedykoľvek aktualizujete.</p>
+          </div>
+          <div class="card">
+            <h3>⚡ Vektorová databáza</h3>
+            <p>Dokumenty uložíme do špeciálnej AI databázy (Pinecone). Asistent vyťahuje relevantné info pre každú otázku, presne a rýchlo.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <strong>🔄 Aktualizácia je jednoduchá:</strong> Zmenili ste cenu z 50&nbsp;€ na 60&nbsp;€? Nahráte aktualizovaný cenník do Drive a asistent bude okamžite odpovedať so správnou cenou.
+        </div>
+      </div>
+    </section>
+
+    <!-- AKO PREBIEHA JEDNA OTÁZKA -->
+    <section class="band" id="priebeh">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-row">
+            <div>
+              <span class="kicker">Krok za krokom</span>
+              <h2>Ako prebieha jedna otázka</h2>
+            </div>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="card">
+            <div class="step-no">01</div>
+            <h3>Zákazník napíše otázku</h3>
+            <p>Napríklad: „Koľko stojí individuálny tréning?"</p>
+          </div>
+          <div class="card">
+            <div class="step-no">02</div>
+            <h3>Asistent prehľadá databázu</h3>
+            <p>Automaticky nájde relevantné informácie z Vašich dokumentov.</p>
+          </div>
+          <div class="card">
+            <div class="step-no">03</div>
+            <h3>Sformuluje odpoveď</h3>
+            <p>Odpovedá presne na základe Vašich podkladov, nič nevymýšľa.</p>
+          </div>
+          <div class="card">
+            <div class="step-no">04</div>
+            <h3>Zákazník dostane odpoveď okamžite</h3>
+            <p>24 hodín denne, 7 dní v týždni, aj keď Vy spíte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE KOHO JE TO IDEÁLNE -->
+    <section class="band" id="prekoho">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head-row">
             <div>
               <span class="kicker">Vhodné pre</span>
-              <h2>Kto z toho vie vyťažiť najviac</h2>
+              <h2>Pre koho je to ideálne</h2>
             </div>
           </div>
         </div>
         <div class="grid-4">
           <div class="card">
-            <h3>E-shopy a služby</h3>
-            <p>Doprava, reklamácie, vlastnosti produktu a odporúčanie ďalšieho kroku bez čakania.</p>
+            <h3>🛍️ E-shopy &amp; služby</h3>
+            <p>Produktové otázky, doprava, reklamácie, zákazník dostane odpoveď ihneď.</p>
           </div>
           <div class="card">
-            <h3>Lokálne služby</h3>
-            <p>Kozmetika, masáže, kliniky, salóny, servisy alebo menšie štúdiá s opakovanými otázkami.</p>
+            <h3>💆 Masáže &amp; wellness</h3>
+            <p>Rezervácie, druhy masáží, kontraindikácie, asistent odpovie za vás, 24/7.</p>
           </div>
           <div class="card">
-            <h3>Reality a ubytovanie</h3>
-            <p>Dostupnosť, podmienky, lokalita, vybavenie alebo kroky k rezervácii – vždy po ruke.</p>
+            <h3>🏥 Lekári &amp; terapeuti</h3>
+            <p>FAQ o procedúrach, poisťovniach a objednávkach bez zbytočných telefonátov.</p>
           </div>
           <div class="card">
-            <h3>Tréneri a kouči</h3>
-            <p>Cena, dĺžka spolupráce, forma konzultácie, voľné termíny – chat odpovedá za vás.</p>
+            <h3>🏡 Reality &amp; ubytovanie</h3>
+            <p>Parametre nehnuteľností, dostupnosť termínov, podmienky, okamžite a presne.</p>
+          </div>
+          <div class="card">
+            <h3>🎓 Kurzy &amp; vzdelávanie</h3>
+            <p>Detaily o kurzoch, platbách a obsahu, bez opakovania tých istých odpovedí.</p>
+          </div>
+          <div class="card">
+            <h3>🏋️ Osobní tréneri &amp; koučovia</h3>
+            <p>Odpovedajte na otázky o cenách, dostupnosti a programoch aj počas tréningu.</p>
+          </div>
+          <div class="card">
+            <h3>🍽️ Reštaurácie &amp; gastro</h3>
+            <p>Otváracie hodiny, denné menu, rezervácie stolov a alergény, bez zbytočných telefonátov.</p>
+          </div>
+          <div class="card">
+            <h3>⚖️ Právnici &amp; poradenstvo</h3>
+            <p>FAQ o službách a cenníku, objednanie konzultácie, dostupné pre klientov nonstop.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CENA -->
+    <section id="cena">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-row">
+            <div>
+              <span class="kicker">Bez prekvapení</span>
+              <h2>Cena</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card price-card">
+          <!-- Top row: price left, badges right -->
+          <div class="price-top-row">
+            <div class="price-left">
+              <p class="price-label">Jednorazová platba</p>
+              <div class="price-amounts">
+                <span class="price-original">297 €</span>
+                <div class="price-amount">97 <span>€</span></div>
+              </div>
+            </div>
+            <div class="price-right">
+              <div class="price-discount-badge">🔥 -200 € PRE PRVÝCH 5 KLIENTOV</div>
+              <div class="price-no-monthly">✦ Bez mesačných poplatkov</div>
+            </div>
+          </div>
+
+          <!-- Discount note -->
+          <div class="discount-note">
+            <strong>Zľavová cena 97 € platí len pre prvých 5 klientov.</strong> Po naplnení kapacity sa cena vráti na štandardných 297 €.
+          </div>
+
+          <!-- Features 2-column -->
+          <ul class="price-list">
+            <li>Nastavenie asistenta</li>
+            <li>Inštalácia widgetu</li>
+            <li>Tréning na Vašich dátach</li>
+            <li>Vlastné farby &amp; štýl</li>
+            <li>Testovanie pred spustením</li>
+            <li>Podpora po spustení</li>
+          </ul>
+
+          <!-- Update note -->
+          <div class="price-note">
+            <strong>Aktualizácie zdarma.</strong> Zmenili ste cenník alebo pridali novú službu? Stačí nahrať dokument do zdieľaného Drive priečinka a informovať nás emailom: <a href="mailto:drugyautomations@gmail.com">drugyautomations@gmail.com</a> — asistent sa aktualizuje automaticky, bez ďalšieho poplatku.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ČASTÉ OTÁZKY -->
+    <section class="band" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head-row">
+            <div>
+              <span class="kicker">Čo Vás zaujíma</span>
+              <h2>Časté otázky</h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Čo ak asistent nevie odpovedať na otázku?</h3>
+            <p>Asistent odpovie iba na základe poskytnutých dokumentov.</p>
+          </div>
+          <div class="card">
+            <h3>Musím mať technické znalosti?</h3>
+            <p>Nie. Vy len dodáte podklady (Word, PDF alebo txt dokument). Chat widget sa vloží jedným riadkom kódu, ktorý Vám pošleme.</p>
+          </div>
+          <div class="card">
+            <h3>Ako dlho trvá celé nastavenie?</h3>
+            <p>Spravidla 3 až 5 pracovných dní od doručenia podkladov. Pri jednoduchších weboch aj skôr. Po testovaní a schválení z Vašej strany je asistent nastavený a pripravený.</p>
+          </div>
+          <div class="card">
+            <h3>Môžem aktualizovať informácie v asistentovi?</h3>
+            <p>Áno. Stačí nahrať nový alebo upravený dokument do zdieľaného Google Drive priečinka a dať nám vedieť emailom. Aktualizácia je automatická a okamžitá, bez ďalšieho zásahu.</p>
+          </div>
+          <div class="card">
+            <h3>Funguje na každom webe?</h3>
+            <p>Áno, WordPress, Wix, Squarespace, vlastný HTML web aj Shopify. Chat widget je jeden riadok kódu, ktorý funguje kdekoľvek, kde viete vložiť HTML.</p>
+          </div>
+          <div class="card">
+            <h3>Sú rozhovory so zákazníkmi súkromné?</h3>
+            <p>Dáta sú spracované cez zabezpečené API (OpenAI) a uložené v šifrovanej vektorovej databáze Pinecone. Rozhovory nie sú zdieľané s tretími stranami ani používané na tréning modelov.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- KONTAKT -->
     <section id="kontakt">
       <div class="wrap">
         <div class="contact-block">
           <span class="kicker">Začnite ešte dnes</span>
-          <h2>Nechajte váš web predávať aj keď spíte</h2>
+          <h2>Máte otázky?</h2>
           <p>Rádi Vám vysvetlíme čokoľvek cez: email / whatsapp / tel. č.</p>
           <div class="contact-buttons">
             <a class="btn btn-primary btn-contact" href="mailto:drugyautomations@gmail.com">✉ Napísať e-mail</a>
@@ -384,6 +686,7 @@
       <span>📍 Prešov, Slovensko</span>
     </div>
   </footer>
+
 </body>
 </html>
 
